@@ -13,6 +13,11 @@ preg_match_all('@<img src="(.*?)>@si', $site, $haberfoto);
 $haberfotocikti = implode('', $haberfoto[1]);
 $haberfotodizi = explode ('"',$haberfotocikti);
 
+preg_match_all('@<img src="(.*?)">@si', $site, $haberdesc);
+$haberdesccikti = implode('^', $haberdesc[1]);
+$haberdescdizi = explode ('^',$haberdesccikti);
+print_r($haberdescdizi);
+exit;
 $person = array(
 'sliders' =>array(
     'slider_1' =>array(
@@ -60,27 +65,32 @@ $person = array(
       'news_1' =>array(
         "img_link"=>"$haberfotodizi[85]",
         "url"=>"$haberfotodizi[1]",
-        "date"=>"$haberfotodizi[1]"
+        "date"=>"$haberfotodizi[1]",
+        "desc"=>"$haberfotodizi[1]"
       ),
       'news_2' =>array(
         "img_link"=>"$haberfotodizi[92]",
         "url"=>"$haberfotodizi[4]",
-        "date"=>"$haberfotodizi[1]"
+        "date"=>"$haberfotodizi[1]",
+        "desc"=>"$haberfotodizi[1]"
       ),
       'news_3' =>array(
         "img_link"=>"$haberfotodizi[99]",
         "url"=>"$haberfotodizi[7]",
-        "date"=>"$haberfotodizi[1]"
+        "date"=>"$haberfotodizi[1]",
+        "desc"=>"$haberfotodizi[1]"
       ),
       'news_4' =>array(
         "img_link"=>"$haberfotodizi[106]",
         "url"=>"$haberfotodizi[10]",
-        "date"=>"$haberfotodizi[1]"
+        "date"=>"$haberfotodizi[1]",
+        "desc"=>"$haberfotodizi[1]"
       ),
       'news_5' =>array(
         "img_link"=>"$haberfotodizi[103]",
         "url"=>"$haberfotodizi[12]",
-        "date"=>"$haberfotodizi[1]"
+        "date"=>"$haberfotodizi[1]",
+        "desc"=>"$haberfotodizi[1]"
       )
     )
 
