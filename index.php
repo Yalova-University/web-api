@@ -1,53 +1,55 @@
 <?php
 $site = file_get_contents("http://www.yalova.edu.tr/");
 $site2 = "http://www.yalova.edu.tr/";
-preg_match_all('@<img src="(.*?)">@si', $site, $sliderlink);
-$sliderlinkcikti = implode("^", $sliderlink[1]);
-$sliderlinkdizi = explode ("^",$sliderlinkcikti);
+preg_match_all('@<img src="(.*?)>@si', $site, $sliderfoto);
+$sliderfotocikti = implode("^", $sliderfoto[1]);
+$sliderfotodizi = explode ("^",$sliderfotocikti);
 
-
+preg_match_all('@<div><a(.*?)>@si', $site, $sliderlink);
+$sliderlinkcikti = implode('href="', $sliderlink[1]);
+$sliderlinkdizi = explode ('"',$sliderlinkcikti);
 
 $person = array(
 'sliders' =>array(
     'slider_1' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[6]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[6]",
+      "url"=>"$sliderlinkdizi[1]"
     ),
     'slider_2' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[7]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[7]",
+      "url"=>"$sliderlinkdizi[4]"
     ),
     'slider_3' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[8]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[8]",
+      "url"=>"$sliderlinkdizi[7]"
     ),
     'slider_4' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[9]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[9]",
+      "url"=>"$sliderlinkdizi[10]"
     ),
     'slider_5' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[10]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[10]",
+      "url"=>"$sliderlinkdizi[12]"
     ),
     'slider_6' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[11]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[11]",
+      "url"=>"$sliderlinkdizi[14]"
     ),
     'slider_7' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[12]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[12]",
+      "url"=>"$sliderlinkdizi[17]"
     ),
     'slider_8' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[13]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[13]",
+      "url"=>"$sliderlinkdizi[20]"
     ),
     'slider_9' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[14]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[14]",
+      "url"=>"$sliderlinkdizi[22]"
     ),
     'slider_0' =>array(
-      "img_link"=>"$site2$sliderlinkdizi[15]",
-      "url"=>""
+      "img_link"=>"$site2$sliderfotodizi[15]",
+      "url"=>"$sliderlinkdizi[24]"
     ),
   )
 
