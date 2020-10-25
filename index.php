@@ -100,7 +100,39 @@ $person = array(
         "date"=>"$haberdatedizi[4]",
         "desc"=>"$haberfotodizi[115]"
       )
-    )
+    ),
+    'announcements_block' =>array(
+        'announcement_1' =>array(
+          "img_link"=>"$haberfotodizi[85]",
+          "url"=>"$haberurldizi[0]",
+          "date"=>"$haberdatedizi[0]",
+          "desc"=>"$haberdescdizi[87]"
+        ),
+        'announcement_2' =>array(
+          "img_link"=>"$haberfotodizi[92]",
+          "url"=>"$haberurldizi[1]",
+          "date"=>"$haberdatedizi[1]",
+          "desc"=>"$haberdescdizi[94]"
+        ),
+        'announcement_3' =>array(
+          "img_link"=>"$haberfotodizi[99]",
+          "url"=>"$haberurldizi[2]",
+          "date"=>"$haberdatedizi[2]",
+          "desc"=>"$haberdescdizi[101]"
+        ),
+        'announcement_4' =>array(
+          "img_link"=>"$haberfotodizi[106]",
+          "url"=>"$haberurldizi[3]",
+          "date"=>"$haberdatedizi[3]",
+          "desc"=>"$haberdescdizi[108]"
+        ),
+        'announcement_5' =>array(
+          "img_link"=>"$haberfotodizi[103]",
+          "url"=>"$haberurldizi[4]",
+          "date"=>"$haberdatedizi[4]",
+          "desc"=>"$haberfotodizi[115]"
+        )
+      )
 
 );
 echo $personJSON=json_encode($person);//returns JSON string
