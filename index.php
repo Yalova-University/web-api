@@ -14,10 +14,18 @@ $haberfotocikti = implode('', $haberfoto[1]);
 $haberfotodizi = explode ('"',$haberfotocikti);
 
 preg_match_all('@<img src="(.*?)">@si', $site, $haberdesc);
-$haberdesccikti = implode('^', $haberdesc[1]);
-$haberdescdizi = explode ('^',$haberdesccikti);
-print_r($haberdescdizi);
-exit;
+$haberdesccikti = implode('"', $haberdesc[1]);
+$haberdescdizi = explode ('"',$haberdesccikti);
+
+preg_match_all('@<p class="post-date mb-0 font-12">(.*?)</p>@si', $site, $haberdate);
+$haberdatecikti = implode('^', $haberdate[1]);
+$haberdatedizi = explode ('^',$haberdatecikti);
+
+preg_match_all('@<a class="post-thumb" href="(.*?)">@si', $site, $haberurl);
+$haberurlcikti = implode('^', $haberurl[1]);
+$haberurldizi = explode ('^',$haberurlcikti);
+
+
 $person = array(
 'sliders' =>array(
     'slider_1' =>array(
@@ -64,33 +72,33 @@ $person = array(
   'news_block' =>array(
       'news_1' =>array(
         "img_link"=>"$haberfotodizi[85]",
-        "url"=>"$haberfotodizi[1]",
-        "date"=>"$haberfotodizi[1]",
-        "desc"=>"$haberfotodizi[1]"
+        "url"=>"$haberurldizi[0]",
+        "date"=>"$haberdatedizi[0]",
+        "desc"=>"$haberdescdizi[87]"
       ),
       'news_2' =>array(
         "img_link"=>"$haberfotodizi[92]",
-        "url"=>"$haberfotodizi[4]",
-        "date"=>"$haberfotodizi[1]",
-        "desc"=>"$haberfotodizi[1]"
+        "url"=>"$haberurldizi[1]",
+        "date"=>"$haberdatedizi[1]",
+        "desc"=>"$haberdescdizi[94]"
       ),
       'news_3' =>array(
         "img_link"=>"$haberfotodizi[99]",
-        "url"=>"$haberfotodizi[7]",
-        "date"=>"$haberfotodizi[1]",
-        "desc"=>"$haberfotodizi[1]"
+        "url"=>"$haberurldizi[2]",
+        "date"=>"$haberdatedizi[2]",
+        "desc"=>"$haberdescdizi[101]"
       ),
       'news_4' =>array(
         "img_link"=>"$haberfotodizi[106]",
-        "url"=>"$haberfotodizi[10]",
-        "date"=>"$haberfotodizi[1]",
-        "desc"=>"$haberfotodizi[1]"
+        "url"=>"$haberurldizi[3]",
+        "date"=>"$haberdatedizi[3]",
+        "desc"=>"$haberdescdizi[108]"
       ),
       'news_5' =>array(
         "img_link"=>"$haberfotodizi[103]",
-        "url"=>"$haberfotodizi[12]",
-        "date"=>"$haberfotodizi[1]",
-        "desc"=>"$haberfotodizi[1]"
+        "url"=>"$haberurldizi[4]",
+        "date"=>"$haberdatedizi[4]",
+        "desc"=>"$haberfotodizi[115]"
       )
     )
 
